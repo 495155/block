@@ -39,6 +39,9 @@ public class Ball : MonoBehaviour
     void Update()
     {
         transform.Translate(BallDirection * Time.deltaTime * speed);
-        
+        if (transform.position.y < -16)
+        {
+            Destroy(gameObject);
+        }
     }
 }
