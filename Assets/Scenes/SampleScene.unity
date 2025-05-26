@@ -1095,11 +1095,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockPrefab: {fileID: 8504641159287813965, guid: 2111916a7a8aeb2478f28f6d6167ce9f, type: 3}
-  rows: 20
+  rows: 18
   cols: 8
   spacingX: 2
   spacingY: 1
-  startPos: {x: -8, y: 13}
+  startPos: {x: -7, y: 13}
 --- !u!4 &1543330209
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class MovePlatform : MonoBehaviour
     void Update()
     {
         // 마우스 위치(-1~1) → 게임 월드 좌표
-        float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;
+        float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits - 9;
 
         // x값을 제한된 범위 안으로 고정
         float clampedX = Mathf.Clamp(mousePosInUnits, minX, maxX);
