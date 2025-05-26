@@ -9,7 +9,7 @@ public class MovePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 마우스 위치(0~1) → 게임 월드 좌표
+        // 마우스 위치(-1~1) → 게임 월드 좌표
         float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;
 
         // x값을 제한된 범위 안으로 고정
