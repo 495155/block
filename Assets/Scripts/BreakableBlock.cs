@@ -19,7 +19,8 @@ public class BreakableBlock : MonoBehaviour
         {
             GM.GetPoint(1);
             TryDropItem();
-            Destroy(gameObject);
+            BlockSpawner.BlockSpawnerInstance.blockPooling.Release(gameObject);
+            //Destroy(gameObject);
         }
     }
     private void TryDropItem()
