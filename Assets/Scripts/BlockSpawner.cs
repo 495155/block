@@ -3,6 +3,19 @@ using UnityEngine.Pool;
 
 public class BlockSpawner : MonoBehaviour
 {
+    private static BlockSpawner blockSpawnerInstance = null;
+    public static BlockSpawner BlockSpawnerInstance
+    {
+        get
+        {
+            if(blockSpawnerInstance == null)
+            {
+                return null;
+            }
+            return blockSpawnerInstance;
+        }
+       
+    }
     public GameObject BlockPrefab; // 연결할 프리팹
     public int rows = 5;
     public int cols = 20;
@@ -11,7 +24,18 @@ public class BlockSpawner : MonoBehaviour
     public Vector2 startPos = new Vector2(2f, 9f); // 좌상단 시작 위치
     public IObjectPool<GameObject> blockPooling { get; private set; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        if (blockSpawnerInstance == null)
+        {
+            blockSpawnerInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     void Start()
     {
         blockPooling = new ObjectPool<GameObject>(
